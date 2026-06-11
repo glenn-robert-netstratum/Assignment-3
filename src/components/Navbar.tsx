@@ -1,4 +1,4 @@
-import { SearchBar } from "./SearchBar";
+import { SearchBar } from "./Home/SearchBar";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {

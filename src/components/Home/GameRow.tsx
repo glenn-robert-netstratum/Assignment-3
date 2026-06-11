@@ -1,4 +1,4 @@
-import GameCard from './GameCard';
+import GameCard from "./GameCard";
 import { games } from "@/data/games"
 import { Swiper,SwiperSlide } from 'swiper/react';
 import "swiper/css";

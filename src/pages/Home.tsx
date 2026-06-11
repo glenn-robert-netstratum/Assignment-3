@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
-import Slider from "@/components/Slider";
-import GameRow from "@/components/GameRow";
-import TrendingSection from "@/components/TrendingSection";
+import Slider from "@/components/Home/Slider";
+import GameRow from "@/components/Home/GameRow";
+import TrendingSection from "@/components/Home/TrendingSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -14,8 +14,9 @@ export default function Home() {
       <GameRow title="Xbox Games" />
       <TrendingSection/>
       <GameRow title="PC Games" />
-
-      <Footer />
+      <div className="mt-20">
+        <Footer />
+      </div>
     </>
   );
 }

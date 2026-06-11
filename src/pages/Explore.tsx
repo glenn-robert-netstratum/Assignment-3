@@ -3,7 +3,8 @@ import FilterSidebar from "@/components/Explore/FilterSidebar";
 import Footer from "@/components/Footer";
 import ExploreSearch from "@/components/Explore/ExploreSearch";
 import ActiveFilters from "@/components/Explore/ActiveFIlters";
-import ExploreGrid from "@/components/Explore/ExploreGrid";
+import GameGrid from "@/components/GameGrid";
+import { games } from "@/data/games";
 
 export default function Explore() {
   return (
@@ -26,7 +27,9 @@ export default function Explore() {
           <main>
             <ExploreSearch/>
             <ActiveFilters/>
-            <ExploreGrid/>
+            <div className="mr-5">
+              <GameGrid games={games}/>
+            </div>
           </main>
         </div>
       </div>

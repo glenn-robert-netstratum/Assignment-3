@@ -1,8 +1,36 @@
 import Navbar from "@/components/Navbar";
+import FilterSidebar from "@/components/Explore/FilterSidebar";
+import Footer from "@/components/Footer";
+import ExploreSearch from "@/components/Explore/ExploreSearch";
+import ActiveFilters from "@/components/Explore/ActiveFIlters";
+import ExploreGrid from "@/components/Explore/ExploreGrid";
 
 export default function Explore() {
   return (
-    <Navbar/>
-    
+    <>
+      <Navbar />
+
+      <div className="pt-20 ">
+        <div
+          className="
+            grid
+            gap-6
+            grid-cols-[130px_1fr]
+            md:grid-cols-[240px_1fr]
+            lg:grid-cols-[280px_1fr]
+            min-h-screen
+          "
+        >
+          <FilterSidebar />
+
+          <main>
+            <ExploreSearch/>
+            <ActiveFilters/>
+            <ExploreGrid/>
+          </main>
+        </div>
+      </div>
+      <Footer/>
+    </>
   );
 }

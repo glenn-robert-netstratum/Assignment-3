@@ -27,7 +27,6 @@ export default function GameCard({
           cursor-pointer
           transition-all
           hover:-translate-y-3
-          md:hover:-translate-y-5
       "
     >
       <img

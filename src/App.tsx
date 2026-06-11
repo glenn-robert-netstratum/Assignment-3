@@ -4,6 +4,7 @@ import Explore from "./pages/Explore";
 import Favorites from "./pages/Favorites";
 
 import './App.css'
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -23,6 +24,11 @@ function App() {
           <Route
             path="/favorites"
             element={<Favorites />}
+          />
+
+          <Route
+            path="/profile"
+            element={<Profile/>}
           />
         </Routes>
       </div>

@@ -1,17 +1,22 @@
-import GameCard from "../Home/GameCard";
-import { games } from "@/data/games";
+import GameCard from "./Home/GameCard";
 
-export default function ExploreGrid() {
+interface GameGridProps {
+  games: any[];
+}
+
+export default function GameGrid({
+  games,
+}: GameGridProps) {
   return (
     <div
       className="
         grid
         gap-4
-        mr-5
+        mb-5
+
         grid-cols-2
         md:grid-cols-3
         xl:grid-cols-4
-        mb-5
       "
     >
       {games.map((game) => (

@@ -1,19 +1,18 @@
 import GameCard from "./GameCard";
-import { games } from "@/data/games"
-import { Swiper,SwiperSlide } from 'swiper/react';
 import "swiper/css";
 
 interface GameRowProps {
   title: string;
+  games: any[];
 }
 
 export default function GameRow({
-  title,
+  title,games
 }: GameRowProps) {
   return (
     <section
       className="
-        py-2
+        py-5
         px-5
       "
     >
@@ -27,17 +26,14 @@ export default function GameRow({
         {title}
       </h2>
 
-        <Swiper
-        className='py-5!'
-        spaceBetween={16}
-        slidesPerView={6}
-      >
+      <div className="flex overflow-x-auto overflow-y-hidden scrollbar-none gap-4 py-5">
         {games.map((game) => (
-          <SwiperSlide key={game.id}>
-            <GameCard game={game} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <GameCard
+          key={game.id}
+          game={game}
+        />
+      ))}
+      </div>
     </section>
   );
 }

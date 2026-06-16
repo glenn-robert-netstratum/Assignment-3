@@ -19,14 +19,16 @@ export default function GameCard({
     <Card
       className="
         relative
-          h-30
-          sm:h-50
-          shrink-0
-          overflow-hidden
-          border-none
-          cursor-pointer
-          transition-all
-          hover:-translate-y-3
+        w-48
+        sm:w-64
+        h-30
+        sm:h-50
+        shrink-0
+        overflow-hidden
+        border-none
+        cursor-pointer
+        transition-all
+        hover:-translate-y-3
       "
     >
       <img

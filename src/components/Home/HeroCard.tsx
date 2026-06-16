@@ -25,6 +25,8 @@ export default function HeroCard({
         overflow-hidden
         border-none
         rounded-t-none
+        z-0
+        
       "
     >
       <img
@@ -36,6 +38,7 @@ export default function HeroCard({
           h-full
           w-full
           object-cover
+          object-top
           rounded-none!
         "
       />
@@ -55,7 +58,8 @@ export default function HeroCard({
           flex
           h-full
           flex-col
-          justify-center
+          justify-start
+          pt-5
           px-6 sm:px-6 md:px-8 lg:px-12
         "
       >
@@ -66,10 +70,10 @@ export default function HeroCard({
         <h1
           className="
             max-w-2xl
-            text-3xl
-            sm:text-4xl
-            md:text-5xl
-            lg:text-6xl
+            text-xl
+            sm:text-2xl
+            md:text-3xl
+            lg:text-4xl
             font-bold
             text-white
           "
@@ -88,7 +92,7 @@ export default function HeroCard({
             rounded-lg
             bg-cyan-400
             px-4 py-2
-            md:px-6 md:py-3
+            md:px-4 md:py-2
             font-semibold
             text-black
           "
@@ -96,6 +100,16 @@ export default function HeroCard({
           Explore Game
         </button>
       </CardContent>
+      <div
+        className="
+          absolute
+          inset-0
+          bg-linear-to-t
+          from-black
+          via-black/40
+          to-transparent
+        "
+      />
     </Card>
   );
 }

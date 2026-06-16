@@ -9,9 +9,6 @@ export default function Navbar() {
     isAuthenticated,
     user,
   } = useAuth0();
-
-  console.log("Authenticated:", isAuthenticated);
-  console.log("User:", user);
   
   const routes = [
     {
@@ -91,7 +88,13 @@ export default function Navbar() {
                 </button>
               ) : (
                 <button
-                  onClick={() => loginWithRedirect()}
+                  onClick={() => loginWithRedirect(
+                    {
+                      authorizationParams:{
+                        prompt :"select_account"
+                      }
+                    }
+                  )}
                   className="hidden md:flex rounded-lg bg-cyan-400 hover:bg-cyan-300 transition-colors px-6 py-2 font-semibold text-black"
                 >
                   Sign In

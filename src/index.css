@@ -128,16 +128,9 @@
     @apply font-sans;
     }
 }
-
-.swiper-pagination-bullet {
-  background: white !important;
-  opacity: 0.5;
-  width: 12px;
-  height: 12px;
+:root {
+  --gameverse-primary: #22d3ee;
+  --gameverse-primary-hover: #67e8f9;
 }
 
-.swiper-pagination-bullet-active {
-  background: #22d3ee;
-  opacity: 1;
-  box-shadow: 0 0 10px #22d3ee;
-}
+

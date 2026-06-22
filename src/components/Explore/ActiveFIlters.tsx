@@ -1,42 +1,15 @@
-import { X } from "lucide-react";
+interface ActiveFIltersProps{
+  filters: string[];
+}
 
-const filters = [
-  "Action",
-  "RPG",
-  "PC",
-  "Rating 80+",
-];
-
-export default function ActiveFilters() {
+export default function ActiveFilters({filters}:ActiveFIltersProps) {
   return (
     <div className="mb-6 flex flex-wrap gap-3 mr-5">
       {filters.map((filter) => (
         <div
           key={filter}
-          className="
-            flex
-            items-center
-            gap-2
-
-            rounded-full
-
-            border
-            border-cyan-500/20
-
-            bg-cyan-500/10
-
-            px-4
-            py-2
-
-            text-sm
-            text-cyan-300
-          "
-        >
+          className="flex items-center gap-2 rounded-full border border-(--gameverse-primary)/20 bg-(--gameverse-primary)/10 px-4 py-2 text-sm text-(--gameverse-primary-hover)">
           {filter}
-
-          <button>
-            <X size={14} />
-          </button>
         </div>
       ))}
     </div>

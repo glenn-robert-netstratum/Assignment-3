@@ -6,22 +6,32 @@ import Footer from "@/components/Footer";
 import { useAppDispatch,useAppSelector, } from "@/store/hooks";
 import { useEffect } from "react";
 import { fetchGames } from "@/store/slices/gamesSlice";
+import { useDownloadList } from "@/components/useListDownloader";
 
 
 export default function Home() {
-  const dispatch = useAppDispatch();
-  const { games } = useAppSelector( (state) => state.games);
+  // const dispatch = useAppDispatch();
+  // const { games } = useAppSelector( (state) => state.games);
 
-  useEffect(() => {
-    if (games.length === 0) {
-      dispatch(fetchGames());
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (games.length === 0) {
+  //     dispatch(fetchGames(1));
+  //     dispatch(fetchGames(2));
+  //    dispatch(fetchGames(3));
+  //   }
+  // }, [dispatch,games.length]);
 
-  const { loading,error,} = useAppSelector((state) => state.games);
-  console.log(games[0])
-  console.log(loading)
-  console.log(error)
+  
+
+  // const { loading,error,} = useAppSelector((state) => state.games);
+
+  // console.log(loading)
+  // console.log(error)
+
+    const {  games }  = useDownloadList()
+  
+
+
 
   const topRatedGames = [...games].sort((a, b) => b.metacritic - a.metacritic).slice(0, 20);
   const trendingGames = [...games].sort((a, b) => b.suggestions_count - a.suggestions_count).slice(0, 4);
@@ -39,7 +49,8 @@ export default function Home() {
       );
     }).slice(0, 20);
 
-    const newestGames = [...games].sort(
+
+  const newestGames = [...games].sort(
       (a, b) =>
         new Date(b.released).getTime() -
         new Date(a.released).getTime()
@@ -50,7 +61,7 @@ export default function Home() {
     <>
       <Navbar />
       <Slider games={games} />
-      <div className="-mt-75 relative z-20">
+      <div className="-mt-90 relative z-20">
         <GameRow title="Top Rated" games={topRatedGames} />
         <GameRow title="Newest Games" games={newestGames} />
         <TrendingSection games={trendingGames}/>

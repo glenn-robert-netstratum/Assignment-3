@@ -1,8 +1,7 @@
 import { useState,useEffect } from "react";
 
 import HeroCard from "./HeroCard";
-import "swiper/css";
-import "swiper/css/pagination";
+import HeroCardSkeleton from "../Skeletons/HeroCardSkeleton";
 
 interface SliderProps{
   games: any[];
@@ -31,8 +30,14 @@ export default function Slider({games} : SliderProps) {
   }, [games.length]);
 
 
-  if (games.length === 0) {
-  return <div>Loading...</div>;
+  if (!games.length) {
+  return (
+    <div className="pt-20">
+      <div className="h-220">
+        <HeroCardSkeleton />
+      </div>
+    </div>
+  );
 }
 
   return (

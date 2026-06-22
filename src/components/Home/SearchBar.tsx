@@ -8,13 +8,7 @@ export function SearchBar() {
 
       <Input
         placeholder="Search games..."
-        className="
-          border-0
-          bg-transparent
-          shadow-none
-          focus-visible:ring-0
-          focus-visible:ring-offset-0
-        "
+        className="border-0 bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
       />
     </div>
   );
